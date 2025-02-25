@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Grid Horizontal</title>
+      <link rel="stylesheet" href="CSS/style_horizontal.css">
+   </head>
+   <body>
+      <header><!--Encabezados y navbar-->
+         
+
+      </header>
+      <main><!--Cuerpo de la página-->
+         <h1>Hola, Esta es mi primer sitio web</h1>
+         <!--Esto es un comentario en HTML-->
+         <!--Lista  Ordenada-->
+         <ol>
+            <li>Youtube</li>
+            <li>Spotify</li>
+            <li>Netflix</li>
+
+         </ol>
+
+         <!--Lista  No ordenada-->
+         <ul>
+            <li>Spotify<br>
+               <a href="https://open.spotify.com/" target="_blank">
+                  <img src="assets/Spotify_logo_without_text.png" alt="Spotify" height=200>
+               </a></li>
+            <li>Youtube<br>
+               <a href="https://www.youtube.com/" target="_blank">
+                  <img src="assets/Youtube_logo.png" alt="Youtube" width=200>
+               </a>
+            </li>
+            <li>Pokédex<br>
+               <a href="https://www.pokemon.com/el/pokedex" target="_blank">
+                  <img src="assets/Poké_Ball_icon.svg.png" alt="Pokédex" width=200>
+               </a>
+            </li>
+            <li>Discord<br>
+               <a href="https://discord.com/" target="_blank">
+                  <img src="assets/Discord.png" alt="Discord" width=200>
+               </a>
+            </li>
+         </ul>
+         <p>Esta es una prueba de un párrafo para mi hoja de estilos</p>
+         
+         <form action="/procesar" method="POST"> Formulario
+            
+            <label for="nombre">Nombre:</label>"Etiqueta" Dar nombre a texto
+            <input type="text" id="nombre" name="nombre" required>recuadro para ingresar texto
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+            
+
+            Selectores o Combo Box
+            <select name="pais" id="pais">
+               <option value="MX">México</option>
+               <option value="JP">Japón</option>
+               <option value="COL">Colombia</option>
+            </select>
+            <textarea name="comentarios" id="comentarios" rows="4" cols="50">
+            <button type="submit">Enviar</button>
+
+            </textarea>
+         </form>
+      </main>
+      <footer><!--Pie de página-->
+
+      </footer>
+
+   </body>
+</html>

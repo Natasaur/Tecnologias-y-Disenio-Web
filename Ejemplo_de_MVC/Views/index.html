@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width-device-width, initial-scale=1.0">
+   <title>Ejemplo MVC</title>
+</head>
+<body>
+   <h1 id="mensaje"></h1>
+   
+   <script>
+      //Realiza la solicitud al servidor Node.js
+      fetch('http://localhost:3000/api/mensaje')
+         .then(response => response.json())
+         .then(data => {
+            //Inserta el mensaje en el elemento id "mensaje"
+            document.getElementById('mensaje').innerText = data.mensaje;
+         })
+         .catch(error => console.error('Error al obtener el mensaje', error));
+   </script>
+   
+</body>
+</html>
