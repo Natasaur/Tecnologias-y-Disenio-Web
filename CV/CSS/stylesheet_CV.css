@@ -1,6 +1,26 @@
 body {
-   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-family: 'Courier New', Courier, monospace;
+   font-weight: bolder;
 }
+
+.navbar {
+   background-color: #3D8D7A;
+   overflow: hidden;
+   padding: 15px;
+   text-align: left;
+}
+
+.navbar a {
+   color: #443627;
+   text-decoration: none;
+   padding: 14px;
+   display: inline-block;
+   color: #fff;
+}
+
+.navbar a:hover {
+   color: #EABDE6;
+ }
 
 .name_header {
    /*display: flex;*/
@@ -19,12 +39,12 @@ body {
 }
 
 .grid {
+   font-family: 'Courier New', Courier, monospace;
    display: grid;
    grid-template-rows: repeat(5, 1fr);
    grid-template-columns: 1fr 4fr;
    height: 100vh;
    width: 100vw;
-   
 }
 
 .grid_item {
@@ -40,8 +60,7 @@ body {
 }
 
 .titulo {
-   font-family: Verdana, Geneva, Tahoma, sans-serif;
-
+   font-family: 'Courier New', Courier, monospace;
    text-align: left;
    font-size: 3rem;
 }
@@ -49,7 +68,7 @@ body {
 .skills {
    display: flex;
    padding: 10px;
-   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-family: 'Courier New', Courier, monospace;
 }
 
 .fila_izq {
