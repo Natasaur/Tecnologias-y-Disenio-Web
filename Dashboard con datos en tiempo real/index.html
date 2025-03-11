@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin en Tiempo Real</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Precio de Bitcoin en Tiempo Real</h1>
+    <h3>Actualizado cada 5 segundos</h3>
+    <div class="contenedor">
+        <div class="columna">
+            <h2>Bitcoin en Pesos Mexicanos (MXN)</h2>
+            <canvas id="bitcoinChartMXN"></canvas>
+            <p id="lastUpdateMXN"></p>
+        </div>
+        <div class="columna">
+            <h2>Bitcoin en Dólares (USD)</h2>
+            <canvas id="bitcoinChartUSD"></canvas>
+            <p id="lastUpdateUSD"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
