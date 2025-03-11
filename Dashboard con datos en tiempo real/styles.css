@@ -17,6 +17,24 @@ h3 {
    color: #8E1616;
 }
 
+.navbar {
+   background-color: #3D8D7A;
+   overflow: hidden;
+   padding: 15px;
+   text-align: left;
+}
+
+.navbar a {
+   color: #443627;
+   text-decoration: none;
+   padding: 14px;
+   display: inline-block;
+}
+
+.navbar a:hover {
+   color: #EABDE6;
+ }
+
 .contenedor {
    display: flex;
    justify-content: center;
