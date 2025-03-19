@@ -1,15 +1,14 @@
-* {
+body {
+   color: #9DC08B;
+   font-family: 'Courier New', Courier, monospace;
    margin: 0;
    padding: 0;
-   box-sizing: border-box;
-   font-family: Arial, sans-serif;
-}
-
-body {
-   background-color: #f4f4f4;
+   background-image: url(https://wallpapercat.com/w/full/f/b/0/2130003-1920x1080-desktop-full-hd-gargantua-interstellar-background-photo.jpg);
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
    display: flex;
    flex-direction: column;
-   min-height: 100vh;
 }
 
 .navbar {
@@ -21,62 +20,62 @@ body {
    padding: 15px 20px;
 }
 
-.logo {
-   font-size: 24px;
-   font-weight: bold;
-}
-
-.nav-links {
-   list-style: none;
-   display: flex;
-}
-
-.nav-links li {
-   margin: 0 15px;
-}
-
-.nav-links a {
-   text-decoration: none;
+header {
+   background-color: #0c0911;
    color: white;
-   font-size: 18px;
+   padding: 15px;
+   text-align: right;
+   font-size: 1em;
+   box-shadow: 0px 4px 6px rgba(55, 30, 30, 0.1);
 }
 
-.menu-toggle {
-   display: none;
-   font-size: 24px;
-   cursor: pointer;
+.menu {
+   list-style-type: none;
+   padding: 10px;
+   text-align: right;
+   background: #211f25;
+   margin: 0;
 }
 
-@media (max-width: 768px) {
-   .nav-links {
-       display: none;
-       flex-direction: column;
-       background-color: #333;
-       position: absolute;
-       top: 60px;
-       right: 0;
-       width: 100%;
-       text-align: center;
-   }
-
-   .nav-links li {
-       padding: 15px;
-   }
-
-   .menu-toggle {
-       display: block;
-   }
-
-   .nav-active {
-       display: flex;
-   }
+.menu li {
+   display: inline;
+   margin-right: 15px;
 }
 
-.content {
-   flex: 1;
-   padding: 20px;
+.menu a {
+   color: #9DC08B;
+   text-decoration: none;
+   font-weight: bold;
+   font-size: 1.2em;
+   transition: color 0.3s;
+}
+
+.menu a:hover {
+   text-decoration: underline;
+}
+
+main {
+   flex: 3;
+   padding: 250px;
+   text-align: justify;
+   font-size: 20px;
+   display: auto;
+   align-items: center;
+   justify-content: center;
+}
+
+footer {
+   background-color: #100d14;
+   color: #9DC08B;
    text-align: center;
+   padding: 15px 0;
+   position: relative;
+   bottom: 0;
+   width: 100%;
+   font-size: 1.2em;
+   box-shadow: 0px -4px 6px rgba(61, 60, 60, 0.1);
 }
+
 
 .footer {
    background-color: #333;
