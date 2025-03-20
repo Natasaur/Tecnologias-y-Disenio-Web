@@ -11,9 +11,11 @@ button.addEventListener("click", (event) => {
     event.preventDefault(); // Evita que el formulario recargue la página
 
     let texto = input.value.trim(); // Obtener el valor del input y eliminar espacios
+    // Trim elimina todo lo que no sea texto
 
     if (texto === '') {
         console.log("Por favor, ingresa una ciudad.");
+        alert("Por favor, ingresa una ciudad.");
         return;
     }
 
@@ -42,7 +44,7 @@ async function fetchWeatherData() {
         updateWeatherData(data);
         updateCharts(data);
     } catch (error) {
-        console.error('Error fetching weather data:', error);
+        console.error('Error, promesa no cumplida:', error);
     }
 }
 
