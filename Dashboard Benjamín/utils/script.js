@@ -4,7 +4,7 @@ let input = document.getElementById('input');
 let button = document.getElementById('button');
 let ciudad;
 let lineChart;
-let pieChart;
+let polarChart;
 
 // Evento para capturar la ciudad ingresada
 button.addEventListener("click", (event) => {
@@ -59,24 +59,29 @@ function updateWeatherData(data) {
 // Función para actualizar los gráficos
 function updateCharts(data) {
     const ctxLine = document.getElementById('lineChart').getContext('2d');
-    const ctxPie = document.getElementById('pieChart').getContext('2d');
+    const ctxPolar = document.getElementById('pieChart').getContext('2d');
 
     if (lineChart) {
         lineChart.destroy();
     }
-    if (pieChart) {
-        pieChart.destroy();
+    if (polarChart) {
+        polarChart.destroy();
     }
+
+    // Validar que los datos existen y son números
+    const temp = data.main.temp || 0;
+    const humidity = data.main.humidity || 0;
+    const pressure = (data.main.pressure / 10) || 0;
 
     lineChart = new Chart(ctxLine, {
         type: 'line',
         data: {
-            labels: ['Temperatura', 'Humedad', 'Presión'],
+            labels: ['Temperatura (°C)', 'Humedad (%)', 'Presión (hPa ÷ 10)'],
             datasets: [{
                 label: 'Datos del Clima',
                 data: [data.main.temp, data.main.humidity, data.main.pressure],
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: '#D91656',
+                borderColor: '#D91656',
                 borderWidth: 1
             }]
         },
@@ -89,25 +94,48 @@ function updateCharts(data) {
         }
     });
 
-    pieChart = new Chart(ctxPie, {
-        type: 'pie',
+    polarChart = new Chart(ctxPolar, {
+        type: 'polarArea',
         data: {
-            labels: ['Temperatura', 'Humedad', 'Presión'],
+            labels: ['Temperatura (°C)', 'Humedad (%)', 'Presión (hPa ÷ 10)'],
             datasets: [{
                 label: 'Datos del Clima',
-                data: [data.main.temp, data.main.humidity, data.main.pressure],
+                data: [temp, humidity, pressure],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)'
+                    '#FFB200',
+                    '#EB5B00',
+                    '#D91656'
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)'
+                    '#FFB200',
+                    '#EB5B00',
+                    '#D91656'
                 ],
                 borderWidth: 1
             }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                r: {
+                    pointLabels: {
+                        display: true,
+                        centerPointLabels: true,
+                        font: {
+                            size: 18
+                        }
+                    }
+                }
+            }
+        },
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Gráfica Polar'
+            }
         }
     });
 }
