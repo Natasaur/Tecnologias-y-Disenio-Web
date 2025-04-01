@@ -1,0 +1,26 @@
+Paso 1: Asegurarse de tener instalado Python.
+   Escribir en la terminal "py --version", si de resultado da la versión de Python, está instalado correctamente.
+
+Paso 2: Utilizar la herramienta pip para instalar virtualenv.
+   "pip install virtualenv"
+
+Paso 3: Dentro de la carpeta en donde se alojará el proyecto ejecutamos la siguiente línea:
+   "virtualenv venv", esto creará un ambiente virtual dentro del proyecto con la versi+on de python espec+ificada o que se tenga instalada.
+
+Paso 4: Para activar el entorno virtual se ejecuta la siguiente línea
+   "venv\Scripts\activate"
+
+Paso 5: Instalar Django con el siguiente comando
+   "pip install django", se puede especifícar una versión 
+
+Paso 6: Iniciar un proyecto en Django
+   Se ejecuta la siguiente linea de código "django-admin startproject nombre_del_proyecto", esto iniciará el proyecto y creará varias carpetas y archivos nuevos:
+   myproject/              # Carpeta del Proyecto django
+   |-- myproject/          
+   |    |-- __init__.py    # Archivo para utilizar el proyecto como un paquete
+   |    |-- settings.py    # Contiene la configuración del proyecto
+   |    |-- urls.py        # Contiene los endpoints del proyecto
+   |    |-- wsgi.py        # Este archivo es simplemente una interfaz de puerta de enlace usada para despliegues.
+   +-- manage.py
+
+resource = "https://gist.github.com/pandrearro/28861eb5d2e1cf5ea473bb71be5c0009"
