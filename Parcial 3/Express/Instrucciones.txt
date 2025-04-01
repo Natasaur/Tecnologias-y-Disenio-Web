@@ -1,0 +1,32 @@
+Paso 1: Asegurarse de tener instalado Node.js.
+   Escribir en la terminal "node -v" y "npm -v", si sale la versión de Node.js y npm significa que están instalados correctamente.
+
+Paso 2: Dentro de la carpeta en la que estará el proyecto ejecutamos la siguiente línea:
+   "npm init -y" para inicializar el proyecto, además de que se creará un archivo package.json con configuración predeterminada gracias al -y que pusimos anteriormente.
+   Si no se le pusiera el -y la terminal nos arrojaría varias preguntas para determinar la configuración de nuestro proyecto.
+
+Paso 4: Instalar Express con el siguiente comando en consola:
+   "npm install express" para agregar Express al del proyecto.
+
+Paso 5: Crear el archivo principal del servidor.
+   Dentro de la carpeta del proyecto hay que crear un archivo llamado "server.js" y agregar el siguiente código para poder correr nuestro servidor:
+   const express = require('express');
+   const app = express();
+   const port = 3000; //El puerto se puede cambiar según las necesidades
+
+   app.get('/', (req, res) => {
+      res.send('Hola, mundo desde Express!');
+   });
+
+   app.listen(port, () => {
+      console.log(`Servidor corriendo en http://localhost:${port}`);
+   });
+
+Paso 6: En la terminal ejecutar el comando "node server.js" para correr nuestro servidor y abrir un navegador en "http://localhost:3000" o el puerto que se haya escogido.
+
+Opcional 1: Se puede agregar nodemon para que nuestro servidor se cargue automáticamente cada que realizamos cambios.
+   Se instala con "npm install -g nodemon" y para ejecutar el servidor "nodemon server.js".
+
+resource = "https://kinsta.com/es/blog/crea-aplicacion-express/"
+resource = "https://expressjs.com/es/starter/installing.html"
+
