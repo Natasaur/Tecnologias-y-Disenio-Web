@@ -1,0 +1,4 @@
+1. mkdir proyecto_express && cd proyecto_express
+2. npm init -y
+3.npm install express ejs sqlite3
+4.code .
