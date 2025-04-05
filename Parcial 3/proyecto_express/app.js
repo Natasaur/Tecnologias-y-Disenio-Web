@@ -15,13 +15,13 @@ app.use(express.urlencoded({extended:true}))
 
 // Ruta principal
 app.get('/', (req, res) => {
-    db.all(`SELECT * FROM Tareas ORDERBY fecha DESC`, (err, Tareas) => {
+    db.all(`SELECT * FROM Tareas ORDER BY fecha DESC`, (err, Tareas) => {
         if (err) return res.send('Error de carga');
-        res.send('index', {title: "Inicio", Tareas})
+        res.render('index', {title: "Inicio", Tareas})
     });
 });
 
-app.post('/crearTarea', (res, req) => {
+app.post('/crearTarea', (req, res) => {
     const {texto} = req.body;
     db.run('INSERT INTO Tareas (texto) VALUES (?)', [texto], (err) => {
         if (err) return res.send( "Error al guardar");

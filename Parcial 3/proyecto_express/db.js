@@ -4,7 +4,7 @@ const db = new baseDatos.Database('.database.db');
 
 db.serialize(() => {
     db.run(`
-        CREATE TABLE IF NOT EXIST Tareas(
+        CREATE TABLE IF NOT EXISTS Tareas(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             texto TEXT NOT NULL,
             fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP  

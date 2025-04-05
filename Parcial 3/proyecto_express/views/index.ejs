@@ -1,7 +1,7 @@
 <% -include('layout') -%>
 
 <section>
-    <p>Bienvenidos al Himalaya</p>
+    <h1>LISTA DE TAREAS</h1>
 
     <form action="/crearTarea" method="post">
         <input type="text" name="texto" placeholder="Escribe una tarea" required>
@@ -10,12 +10,10 @@
 
     <h2>TAREAS</h2>
     <ul>
-        <% forEach(tarea => { %>
+        <% Tareas.forEach(tarea => { %>
             <li>
-                <% tarea.texto %> - <small>
-                    <%= tarea.fecha %>
-                    </small>
+                <%= tarea.texto %> - <small><%= tarea.fecha %></small>
             </li>
-            <%  }) %>
+        <%  }) %>
     </ul>
 </section>
