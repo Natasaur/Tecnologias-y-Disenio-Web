@@ -1,19 +1,44 @@
-<% -include('layout') -%>
-
 <section>
-    <h1>LISTA DE TAREAS</h1>
+    <div class="container">
+        <h1>LISTA DE TAREAS</h1>
+        <form action="/crearTarea" method="post">
+            <label for="nuevaTarea" class="form-label">Nueva Tarea:</label><br>
+            <input type="text" class="form-control" name="texto" placeholder="Escribe una tarea" required><br>
+            <button type="submit" class="btn btn-outline-light">Guardar</button>
+        </form>
+    </div>
 
-    <form action="/crearTarea" method="post">
-        <input type="text" name="texto" placeholder="Escribe una tarea" required>
-        <button type="submit">Guardar</button>
-    </form>
+    <div class="container">
+        <h2>TAREAS</h2>
+        <!--
+        <ul>
+            <% Tareas.forEach(tarea => { %>
+                <li>
+                    <%= tarea.texto %> - <small><%= tarea.fecha %></small>
+                </li>
+            <%  }) %>
+        </ul>
+        -->
 
-    <h2>TAREAS</h2>
-    <ul>
-        <% Tareas.forEach(tarea => { %>
-            <li>
-                <%= tarea.texto %> - <small><%= tarea.fecha %></small>
-            </li>
-        <%  }) %>
-    </ul>
+        <table class="table table-striped-columns">
+            <thead>
+                <tr>
+                    <th>Descripción</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% Tareas.forEach(tarea => { %>
+                    <tr>
+                        <td>
+                            <%= tarea.texto %>
+                        </td>
+                        <td>
+                            <%= tarea.fecha %>
+                        </td>
+                    </tr>
+                <%  }) %>
+            </tbody>
+        </table>
+    </div>
 </section>
