@@ -4,17 +4,13 @@ const expressLayouts = require('express-ejs-layouts');
 const app = express();
 const PORT = 3000;
 
-// Configurar el ejs
+
 app.set('view engine', 'ejs');
-//app.set('views', './views');
+app.set('layout', 'layout'); 
+
 app.use(expressLayouts);
-app.set('layout', 'layout'); // layout.ejs debe estar en la carpeta /views
-
-// Configurar archivos estáticos (css, js)
 app.use(express.static('public'));
-// Configurar Base de Datos
 app.use(express.urlencoded({extended:true}))
-
 app.use(express.static('public'));
 
 
@@ -33,10 +29,6 @@ app.post('/crearTarea', (req, res) => {
         res.redirect('/')
     });
 });
-
-
-
-
 
 // Iniciamos el servidor
 app.listen(PORT, () => {

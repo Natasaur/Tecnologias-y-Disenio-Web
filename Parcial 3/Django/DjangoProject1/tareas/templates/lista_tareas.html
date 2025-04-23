@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+</head>
+<body>
+    <h1>Lista de Tareas</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Descripción</th>
+                <th>Fecha de Creación</th>
+                <th>Fecha de Vencimiento</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tarea in tareas %}
+            <tr>
+                <td>{{ tarea.descripcion }}</td>
+                <td>{{ tarea.fecha_creacion }}</td>
+                <td>{{ tarea.fecha_vencimiento }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
